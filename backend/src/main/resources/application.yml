@@ -1,0 +1,26 @@
+server:
+  port: ${PORT:8080}
+  forward-headers-strategy: native   # behind a proxy (Render) use the real client IP
+
+spring:
+  datasource:
+    # Works with MySQL locally and PostgreSQL in the cloud: the driver is chosen from the URL.
+    url: ${DB_URL:jdbc:mysql://localhost:3306/mocktest?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update   # fine for a learning project; use Flyway migrations in production
+    properties:
+      hibernate.jdbc.time_zone: UTC
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}          # no default on purpose: the app refuses to start without it
+    expiration-minutes: 60
+  admin:
+    email: ${ADMIN_EMAIL:}
+    password: ${ADMIN_PASSWORD:}
+  seed-sample: ${SEED_SAMPLE:true}
+  cors-origins: ${CORS_ORIGINS:http://localhost:5173}

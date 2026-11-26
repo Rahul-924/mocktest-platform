@@ -1,0 +1,28 @@
+:root { --bg:#f5f7fb; --card:#fff; --ink:#1b2430; --muted:#6b7686; --brand:#2f5bea; --ok:#1f9d55; --bad:#d64545; --line:#e3e8f0; }
+* { box-sizing: border-box; }
+body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; background:var(--bg); color:var(--ink); }
+.nav { display:flex; justify-content:space-between; align-items:center; padding:12px 24px; background:var(--card); border-bottom:1px solid var(--line); }
+.nav a { color:var(--brand); text-decoration:none; margin-left:16px; }
+.brand { font-weight:700; font-size:1.2rem; margin-left:0 !important; }
+.nav-right { display:flex; align-items:center; gap:12px; }
+.container { max-width:860px; margin:24px auto; padding:0 16px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; margin:12px 0; }
+.narrow { max-width:380px; margin:40px auto; display:flex; flex-direction:column; gap:12px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; }
+.row { display:flex; gap:8px; flex-wrap:wrap; }
+label { display:flex; flex-direction:column; gap:4px; font-size:.9rem; margin:6px 0; }
+input, select { padding:8px 10px; border:1px solid var(--line); border-radius:6px; font-size:1rem; }
+.btn { display:inline-block; background:var(--brand); color:#fff; border:0; border-radius:6px; padding:9px 16px; cursor:pointer; text-decoration:none; font-size:.95rem; margin-top:8px; }
+.btn.ghost { background:transparent; color:var(--brand); border:1px solid var(--brand); }
+.btn.small { padding:5px 10px; margin:0; }
+.link { background:none; border:0; color:var(--brand); cursor:pointer; padding:0; font-size:1rem; text-decoration:underline; }
+.muted { color:var(--muted); }
+.error { color:var(--bad); }
+table { width:100%; border-collapse:collapse; background:var(--card); }
+th, td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); }
+.sticky { position:sticky; top:0; display:flex; justify-content:space-between; background:var(--card); padding:10px 14px; border:1px solid var(--line); border-radius:8px; z-index:5; }
+.timer { font-variant-numeric:tabular-nums; font-weight:700; }
+.timer.danger { color:var(--bad); }
+.option { display:flex; gap:8px; align-items:center; padding:6px 10px; border:1px solid var(--line); border-radius:6px; margin:6px 0; flex-direction:row; }
+.option.right { border-color:var(--ok); background:#e8f6ee; }
+.option.wrong { border-color:var(--bad); background:#fdeaea; }
